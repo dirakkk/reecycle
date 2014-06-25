@@ -4,8 +4,11 @@
   <meta charset="utf-8">
   <title>Google Phone Gallery</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+     <!--link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/-->
+
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" type="text/css" href="css/base-styles.css?v=14.2.2.1">
 
   <script src="bower_components/jquery/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
@@ -19,7 +22,21 @@
   <script src="js/services.js"></script>
 </head>
 <body>
+<div class="header-container">
+        <div id="header" class="base-width">
+            <div id="search-form">
+            <ul class="ui-autocomplete ui-menu site-search-autocomplete ui-corner-bl ui-corner-br" role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 3; top: 0px; left: 0px; display: none;"></ul></div>
+            <img src="img/objects/logo.jpg" title="RecycleBank" id="logo"></a>
+    
+    
+</div>
+    </div>
+</div>
 
+                        <div class="clearer"></div>
+
+        </div>
+            </div>
   <div class="view-container">
     <div ng-view class="view-frame"></div>
   </div>

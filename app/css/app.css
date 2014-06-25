@@ -14,23 +14,21 @@ body {
   float: left;
 }
 
+li {
+  list-style: none;
+}
+
 .phones {
   list-style: none;
 }
 
 .thumb {
-  float: left;
-  margin: -0.5em 1em 1.5em 0;
+  margin: 5px;
   padding-bottom: 1em;
   height: 100px;
   width: 100px;
 }
 
-.phones li {
-  clear: both;
-  height: 115px;
-  padding-top: 15px;
-}
 
 /** Detail View **/
 img.phone {
@@ -42,6 +40,13 @@ img.phone {
   height: 400px;
   width: 400px;
   display: none;
+}
+
+.caption {
+  width: 80px;
+  height : 80px;
+  overflow: hidden;
+  display:inline-block;
 }
 
 img.phone:first-child {
@@ -72,28 +77,19 @@ ul.phone-thumbs img:hover {
 }
 
 
-ul.specs {
-  clear: both;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-ul.specs > li{
-  display: inline-block;
-  width: 200px;
-  vertical-align: top;
-}
-
-ul.specs > li > span{
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-ul.specs dt {
-  font-weight: bold;
-}
-
 h1 {
   border-bottom: 1px solid gray;
+}
+
+.thumbnail.right-caption  > img {
+    float: left;
+    margin-right: 9px;
+}
+
+.thumbnail.right-caption {
+    float: left;
+}
+
+.thumbnail.right-caption  > .caption {
+    padding: 4px;
 }
