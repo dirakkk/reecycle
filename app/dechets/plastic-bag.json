@@ -1,0 +1,28 @@
+{
+    "additionalFeatures": "Sensors: proximity, ambient light, barometer, gyroscope", 
+    "android": {
+        "os": "Android 3.0", 
+        "ui": "Honeycomb"
+    }, 
+    "availability": [
+        ""
+    ], 
+    "recycling_figures": {
+        "european_rate": "336 hours", 
+        "talkTime": "24 hours", 
+        "type": "Other ( mAH)"
+    }, 
+    "description": "Plastic bag made from polyethylene, which consists of long chains of ethylene monomers .", 
+    "display": {
+        "screenResolution": "WXGA (1200 x 800)", 
+        "screenSize": "10.1 inches", 
+        "touchScreen": true
+    },
+    "id": "Plastic bag", 
+    "images": [
+        "img/objects/plastic-bag.0.jpg", 
+        "img/objects/plastic-bag.1.jpg", 
+        "img/objects/plastic-bag.2.jpg"
+    ], 
+    "name": "Common plastic bag made from polyethylene"
+}

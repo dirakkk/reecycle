@@ -10,9 +10,10 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Dechet',
     $scope.orderProp = 'age';
   }]);
 
-phonecatControllers.controller('DechetDetailCtrl', ['$scope', '$routeParams', 'Dechet',
-  function($scope, $routeParams, Dechet) {
-    $scope.phone = Dechet.get({phoneId: $routeParams.phoneId}, function(phone) {
+phonecatControllers.controller('DechetDetailCtrl', ['$scope', '$routeParams', 'Dechet','$log',
+  function($scope, $routeParams, Dechet,$log) {
+    $log.debug($routeParams.dechetId);
+    $scope.phone = Dechet.get({dechetId: $routeParams.dechetId}, function(phone) {
       $scope.mainImageUrl = phone.images[0];
     });
 
