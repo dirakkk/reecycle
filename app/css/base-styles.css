@@ -20,41 +20,75 @@
 	overflow:hidden;
 	width:310px;
 }
-#search-form{position:absolute;top:35px;left:0;width:225px}
-#search-form .input-group{display:block}
-#search-form .global-search-form-input{background:#ebebeb;border-radius:4px;border:0;display:block;float:none;font:normal 16px 'Roboto',sans-serif;padding-right:25px;padding-left:42px;width:216px}
-#search-form .input-group-addon{background-image:url(../img/icons/icon-search.png);background-position:center center;background-repeat:no-repeat;position:absolute;top:0;left:0;width:36px;height:100%;z-index:10}
+#search-row {
+	height:50px;
+}
+.input-group {
+	width:225px;
+	margin: 10px 0 10px 50px;
+	overflow:hidden;
+}
+.global-search-form-input{
+	background:#ebebeb;
+	border-radius:4px;
+	border:0;
+	display:block;
+	float:none;
+	font:normal 16px 'Roboto',sans-serif;
+	padding-right:25px;
+	padding-left:42px;
+	width:216px
+}
+/*
+.input-group-addon{
+	border-radius:4px;
+	background:#a1a1a1;
+	background-image:url(../img/icons/icon-search.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+	position:absolute;
+	top:0;left:0;width:36px;height:100%;z-index:10
+}
+*/
+
+
+
 #search-form .global-search-form-input.ui-autocomplete-loading{background-image:url(../skin/frontend/enterprise/blank/images/ajax-loader-grey.gif);background-repeat:no-repeat;background-position:195px center;padding-right:25px}
 #top-navigation{margin-top:20px}
-ul#menu{margin:0;padding:0}
-ul#menu li{display:inline-block;text-align:left}
-ul#menu li:last-child{text-align:right}
-ul#menu li span{white-space:nowrap}
-ul#menu li>a{color:#a1a1a1;display:inline-block;font:normal 18px 'Roboto',sans-serif;height:25px;line-height:24px;text-decoration:none;text-transform:capitalize;vertical-align:middle;*margin-bottom:5px}
-ul#menu li:hover>a,ul#menu li a.active-link{color:#636363;text-decoration:none}
-#menu-item-livegreen{width:150px}
-#menu-item-earn{width:160px}
-#menu-item-myrecycling{width:160px}
-#menu-item-rewards{width:170px}
-#menu-item-onetwine{width:230px}
-#menu-item-onetwine a{background:url(../skin/frontend/enterprise/blank/images/navigation/one-twine.png?v=14.2.2.1) no-repeat;overflow:hidden;text-indent:-1000em;width:180px;height:26px}
-#menu-item-onetwine a:hover{background-position:0 -26px}
-#menu-item-about{width:90px}
-.header-top-block{font:normal 16px 'Roboto',sans-serif;padding:15px 0}
-.header-top-block-inner{margin:0 auto;overflow:hidden;width:990px}
-.header-top-block h3{color:#636363;font:bold 24px 'Roboto',sans-serif;margin:0 0 5px}
-.header-auth-block{font:bold 14px 'Roboto',sans-serif;padding:15px 0}
-.header-auth-block-inner{margin:0 auto;overflow:hidden;width:990px}
-.header-auth-block-text{color:#fff;float:left;font-size:16px;width:450px}
-.header-auth-block,.header-auth-block p{color:#fff}
-.header-auth-block a{font-family:inherit}
-.header-auth-block .btn{font-size:20px}
-.header-auth-block .readmore{color:#313133}
-.rb_signup_fb_block_home h2{color:#fff;margin-top:0}
-.header-curbside-subscribed{color:#313133}
-.header-curbside-subscribed-heading,.header-curbside-recycled-amount{font-family:'Roboto',sans-serif;font-weight:bold;margin-top:0}
-.header-curbside-recycled-amount{margin-top:10px}
-.header-curbside-eligible{background:url(../skin/frontend/enterprise/blank/images/icon-recycling.png?v=14.2.2.) 0 4px no-repeat;color:#636363;font:normal 16px 'Roboto',sans-serif;padding-left:40px}
-.header-curbside-eligible-heading{color:#636363;font:bold 24px 'Roboto',sans-serif;margin-top:0}
-.header-curbside-eligible-button{margin-top:10px}
-.header-curbside-eligible a.readmore{color:#636363;text-decoration:underline}
+
+.input-group-addon {
+	background-color: #a1a1a1;
+	background-image:url(../img/icons/icon-search.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+.merged input:first-child {
+    border-right: 0px;
+}
+.merged .input-group-addon + input {
+	border-left: 0px;
+}
+
+.grey {
+  background-color: #ebebeb;
+  }
+
+  .livegreen-sidebar-title {
+background: #a1a1a1;
+color: #fff;
+font-family: 'Roboto',sans-serif;
+font-weight: bold;
+margin-top: 0;
+padding: 5px 10px;
+}
+
+.livegreen-list-image {
+color: #636363;
+font-size: 18px;
+font-family: 'Merriweather',serif;
+line-height: 1.3em;
+margin-top: 0;
+overflow: hidden;
+padding-left: 10px;
+word-wrap: break-word;
+}

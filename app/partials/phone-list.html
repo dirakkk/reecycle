@@ -1,41 +1,48 @@
+     
+ 
+
 <div class="container-fluid">
-    <!--div class="col-md-2">
-      <!--Sidebar content-->
-    <div class="panel panel-default">
-    <div class="panel-body">
-      <!--Body content-->
 
-       <div class="input-group">
+  <div class="row">
+       <!-- <div class="input-group">
+        <span class="input-group-addon"/>
+         <input id="global-search-form-input" name="q" type="text" class="form-control global-search-form-input ui-autocomplete-input" placeholder="Search" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" data-url="/search/autocomplete" ng-model="query"/>
+       </div> -->
+
+
+       <div class="input-group merged">
         <span class="input-group-addon"></span>
-         <!--input ng-model="query"-->
-         <input id="global-search-form-input" name="q" type="text" class="form-control global-search-form-input ui-autocomplete-input" placeholder="Search" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" data-url="/search/autocomplete" ng-model="query"></div>
-
-
-      <!--ul class="phones">
-        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp"
-            class="thumbnail phone-listing">
-          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
-          <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
-          <p>{{phone.snippet}}</p>
-        </li>
-      </ul-->
-
-<!--div class="row"-->
-  <ul>
-    <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" href="#/phones/{{phone.id}}" class="span4">
-      <a href="#/phones/{{phone.id}}">
-        <div   class="thumbnail right-caption span4">
-        <img class="span2 thumb " ng-src="{{phone.imageUrl}}" alt="">
-          <div class="caption">
-            <h5>Thumbnail label </h5>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget. Eget metus</p>
-          </div>
+        <input class="form-control grey" placeholder="Search" ng-model="query" aria-haspopup="true"/>
       </div>
-      </a>
-    </li>
-    </ul>
 
+    </div>
 
-    </div><!--fin panel body-->
-  </div><!--fin panel -->
-</div><!--fin container-->
+    <div class="row">
+
+      <div class="col-xs-8">
+        <ul>
+          <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" href="#/phones/{{phone.id}}" class="span4">
+            <a href="#/dechets/{{phone.id}}">
+              <div   class="thumbnail right-caption span4">
+                <img class="span2 thumb " ng-src="{{phone.imageUrl}}" alt="">
+                <div class="caption">
+                  <h5>{{phone.name}}</h5>
+                  <p>{{phone.snippet}}</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+        <!--Sidebar content-->
+      </div>
+      <div class="col-xs-2 right-side-bar">
+        <h3 class="livegreen-sidebar-title">Most Popular</h3>
+        <div class="livegreen-list-image ">
+            Wazzza
+        </div>
+        <!--Body content-->
+      </div>
+
+    </div><!--fin row--> 
+  </div><!--fin container-->
