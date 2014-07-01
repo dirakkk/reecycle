@@ -16,7 +16,8 @@
 	no-repeat;
 	cursor:pointer;
 	display:inline-block;
-	float:none;
+	float:left;
+	margin-left: 40px;
 	overflow:hidden;
 	width:310px;
 }

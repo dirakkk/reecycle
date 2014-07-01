@@ -21,10 +21,34 @@
   <script src="js/filters.js"></script>
   <script src="js/services.js"></script>
   <script src="js/directives.js"></script>
+  <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['gauge']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['CO2', 80],
+          ['Plastic', 55],
+          ['Years', 68]
+        ]);
+
+        var options = {
+          width: 400, height: 120,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
 </head>
 <body>
 <div class="header-container">
     <div id="header" class="base-width"><img src="img/icons/logo.jpg" title="RecycleBank" id="logo"></a></div>
+    <div id='chart_div'></div>
 </div>
 <div class="clearer"></div>
 <div class="view-container"><div ng-view class="view-frame"></div></div>

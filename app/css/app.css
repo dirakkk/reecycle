@@ -109,3 +109,9 @@ h1 {
 ul.specs {
   padding: 0px;
 }
+
+#chart_div {
+  position: relative;
+  top: -30px;
+  display: inline;
+}
