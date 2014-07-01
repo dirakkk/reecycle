@@ -7,12 +7,13 @@
     "availability": [
         ""
     ], 
-    "recycling_figures":{
-            "euRecycleRate":80,
-            "co2RecycleRate":80,
-            "euTonsRecycled":120,
-            "daysToRecycle":40        
-    }, 
+    "recycling_figures": [
+     {"name": "EU recycling rate", "score": 50},
+     {"name": "CO2 rate of recycling", "score": 80},
+     {"name": "Tons recycled/year in EU", "score": 120},
+     {"name": "Days to recycle", "score": 40}
+     ]
+    , 
     "description": "Plastic bag made from polyethylene, which consists of long chains of ethylene monomers .", 
     "display": {
         "screenResolution": "WXGA (1200 x 800)", 
