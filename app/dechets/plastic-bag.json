@@ -7,10 +7,11 @@
     "availability": [
         ""
     ], 
-    "recycling_figures": {
-        "european_rate": "336 hours", 
-        "talkTime": "24 hours", 
-        "type": "Other ( mAH)"
+    "recycling_figures":{
+            "euRecycleRate":80,
+            "co2RecycleRate":80,
+            "euTonsRecycled":120,
+            "daysToRecycle":40        
     }, 
     "description": "Plastic bag made from polyethylene, which consists of long chains of ethylene monomers .", 
     "display": {

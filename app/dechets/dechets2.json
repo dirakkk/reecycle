@@ -4,20 +4,39 @@
         "id": "plastic-bag", 
         "imageUrl": "img/objects/plastic-bag.0.jpg", 
         "name": "sac plastocus", 
-        "snippet": "Sac plastoc vulgarissimus."
+        "snippet": "Sac plastoc vulgarissimus.",
+        "figures":{
+            "euRecycleRate":80,
+            "co2RecycleRate":80,
+            "euTonsRecycled":120,
+            "daysToRecycle":40        
+        }
     },
     {
          "age": 1, 
          "id": "bottleplstic", 
          "imageUrl": "img/objects/bottle.0.jpg", 
          "name": "sac plastocus", 
-         "snippet": "Sac plastoc vulgarissimus."
+         "snippet": "Sac plastoc vulgarissimus.",
+         "figures":{
+            "euRecycleRate":80,
+            "co2RecycleRate":80,
+            "euTonsRecycled":120,
+            "daysToRecycle":40        
+        }
      },
      {
         "age": 2, 
         "id": "bottle-glass", 
         "imageUrl": "img/objects/bottle-glass.0.jpg", 
         "name": "bouteille en verre", 
-        "snippet": "Quille de pinard de type basique."
+        "snippet": "Quille de pinard de type basique.",
+        "figures":{
+            "euRecycleRate":80,
+            "co2RecycleRate":80,
+            "euTonsRecycled":120,
+            "daysToRecycle":40        
+        }
+
     }    
 ]

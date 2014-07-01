@@ -51,6 +51,7 @@ img.phone:first-child {
 
 ul.phone-thumbs {
   margin: 0;
+  padding:0px;
   list-style: none;
 }
 
@@ -103,4 +104,8 @@ h1 {
 
 .thumbnail > img {
     height: 100px;
+}
+
+ul.specs {
+  padding: 0px;
 }
