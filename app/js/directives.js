@@ -82,8 +82,13 @@ angular.module('d3AngularApp', ['d3'])
 	]);
 
 
-angular.module('googleGauge',[]).directive('gaugeChart', function() {
-	return function(scope, element, attrs, MonitoringService) {
+angular.module('googleGauge',[]).directive('gaugeChart',[ function() {
+	return {
+				restrict: 'EA',
+				scope: {
+					data: '='
+				},
+				link:function(scope, element, attrs, MonitoringService) {
 			// Log element
 			var gaugeOptions = {
 			    width: 400, height: 120,
@@ -94,16 +99,14 @@ angular.module('googleGauge',[]).directive('gaugeChart', function() {
 
 			var chart = new google.visualization.Gauge( element[0]);
 
-			
-			scope.$watch(attrs.gaugeChart, function(value) {
+			scope.$watch('data', function(value) {
 				scope.render(value);
 			});
 
-			scope.$watch(scope.plasticRecycledQty, function(value2){
-				 scope.chartData[1][1] =scope.plasticRecycledQty;
- 
-				scope.render(scope.chartData);
-			});
+			//scope.$watch(scope.plasticRecycledQty, function(value2){
+			// 	scope.chartData[1][1] =scope.plasticRecycledQty;
+			// 	scope.render(scope.chartData);
+			// });
 
 			scope.render=function(data){
 				var datas = google.visualization.arrayToDataTable(data);
@@ -113,4 +116,5 @@ angular.module('googleGauge',[]).directive('gaugeChart', function() {
 
 		
 	}
-})
+}
+}]);
