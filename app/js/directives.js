@@ -84,41 +84,33 @@ angular.module('d3AngularApp', ['d3'])
 
 angular.module('googleGauge',[]).directive('gaugeChart', function() {
 	return function(scope, element, attrs, MonitoringService) {
-		// Log element
-		console.log(scope, element, attrs);
-		var chart = new google.visualization.Gauge( element[0]);
-		scope.$watch(attrs.gaugeChart, function(value) {
-			//var data = google.visualization.arrayToDataTable(value);
+			// Log element
+			var gaugeOptions = {
+			    width: 400, height: 120,
+			    redFrom: 90, redTo: 100,
+			    yellowFrom:75, yellowTo: 90,
+			    minorTicks: 5
+			  };
 
-			// var options = {
-			// 		width: attrs.chartWidth, height: attrs.chartHeight,
-			// 		redFrom: attrs.chartRedfrom, redTo: attrs.chartRedto,
-			// 		yellowFrom: attrs.chartYellowfrom, yellowTo: attrs.chartYellowto,
-			// 		max: attrs.chartMax,
-			// 		min: attrs.chartMin,
-			// 		minorTicks: 1,
-			// 		 animation:{
-			// 		        duration: 1000,
-			// 		        easing: 'in',
-			// 		      }
-			// };
+			var chart = new google.visualization.Gauge( element[0]);
 
-		 var gaugeOptions = {
-		    width: 400, height: 120,
-		    redFrom: 90, redTo: 100,
-		    yellowFrom:75, yellowTo: 90,
-		    minorTicks: 5
-		  };
+			
+			scope.$watch(attrs.gaugeChart, function(value) {
+				scope.render(value);
+			});
 
-var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['CO2', scope.plasticRecycledQty],
-          ['Plastic', 55],
-          ['Years', 68]
-        ]);
+			scope.$watch(scope.plasticRecycledQty, function(value2){
+				 scope.chartData[1][1] =scope.plasticRecycledQty;
+ 
+				scope.render(scope.chartData);
+			});
 
-			chart.draw(data, gaugeOptions);
+			scope.render=function(data){
+				var datas = google.visualization.arrayToDataTable(data);
+				chart.draw(datas, gaugeOptions);
+			}
 
-		});
+
+		
 	}
 })
