@@ -34,7 +34,7 @@ angular.module('d3AngularApp', ['d3'])
 						scope.$watch('data', function(newData) {
             				scope.render(newData);
           				}, true);
-          				
+
 						scope.render = function(data) {
 							$log.debug("in render");
     						svg.selectAll('*').remove();// remove all previous items before render
@@ -54,7 +54,7 @@ angular.module('d3AngularApp', ['d3'])
 						    })
 						    .attr('fill', function(d) { return color(d.score); })
 						    .transition()
-						    .duration(1000)
+						    .duration(500)
 						    .attr('width', function(d) {
 						    	return xScale(d.score);
 						    });
