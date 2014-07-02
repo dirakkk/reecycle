@@ -7,7 +7,8 @@ var phonecatApp = angular.module('phonecatApp', [
   'phonecatAnimations',
   'phonecatControllers',
   'phonecatFilters',
-  'phonecatServices'
+  'phonecatServices',
+  'googleGauge'
 ]);
 
 phonecatApp.config(['$routeProvider',

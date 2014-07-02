@@ -4,6 +4,13 @@
 
 var phonecatControllers = angular.module('phonecatControllers', []);
 
+
+phonecatControllers.controller('headerController',['$scope',function ($scope){
+
+  $scope.plasticRecycledQty=0;
+
+}]);
+
 phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Dechet',
   function($scope, Dechet) {
     $scope.phones = Dechet.query();
@@ -33,4 +40,6 @@ phonecatControllers.controller('DechetDetailCtrl', ['$scope', '$routeParams', 'D
       $scope.mainImageUrl = imageUrl;
     }
   }]);
+
+
 

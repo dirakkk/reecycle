@@ -22,33 +22,20 @@
   <script src="js/services.js"></script>
   <script src="js/directives.js"></script>
   <script type='text/javascript' src='https://www.google.com/jsapi'></script>
-    <script type='text/javascript'>
-      google.load('visualization', '1', {packages:['gauge']});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['CO2', 80],
-          ['Plastic', 55],
-          ['Years', 68]
-        ]);
-
-        var options = {
-          width: 400, height: 120,
-          redFrom: 90, redTo: 100,
-          yellowFrom:75, yellowTo: 90,
-          minorTicks: 5
-        };
-
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
+  <script type="text/javascript">
+      google.setOnLoadCallback(function() {
+        angular.bootstrap(document.body, ['phonecatApp']);
+    });
+    google.load('visualization', '1', {packages: ['gauge']});
+  </script>  
 </head>
 <body>
-<div class="header-container">
+<div class="header-container" ng-controller="headerController" >
     <div id="header" class="base-width"><img src="img/icons/logo_2.jpg" title="RecycleBank" id="logo"></a></div>
-    <div id='chart_div'></div>
+    <div gauge-chart="chartData" chart-width="600"
+  chart-height="300" chart-redfrom="100" chart-redto="200" chart-yellowfrom="75" chart-yellowto="100" 
+  chart-max="200" chart-min="0"></div>
+  Number : <input type="number" name="quantity" id="quantity" ng-model="plasticRecycledQty" />
 </div>
 <div class="clearer"></div>
 <div class="view-container"><div ng-view class="view-frame"></div></div>
