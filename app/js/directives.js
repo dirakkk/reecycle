@@ -86,9 +86,10 @@ angular.module('googleGauge',[]).directive('gaugeChart',[ function() {
 	return {
 				restrict: 'EA',
 				scope: {
-					data: '='
-				},
-				link:function(scope, element, attrs, MonitoringService) {
+				 	'data':'=',
+				 	'qty':'='
+				 },
+				link:function(scope, element, attrs) {
 			// Log element
 			var gaugeOptions = {
 			    width: 400, height: 120,
@@ -103,13 +104,20 @@ angular.module('googleGauge',[]).directive('gaugeChart',[ function() {
 				scope.render(value);
 			});
 
-			//scope.$watch(scope.plasticRecycledQty, function(value2){
-			// 	scope.chartData[1][1] =scope.plasticRecycledQty;
-			// 	scope.render(scope.chartData);
-			// });
+
+			 scope.$watch("qty", function(newValue, oldValue) {
+    console.log('CTRLFF:', newValue);
+      	scope.data[1][1] =scope.qty;
+			  	scope.render(scope.data);
+  });
+
+			// scope.$watch(scope.plasticRecycledQty, function(value2){
+			//  	scope.data[1][1] =scope.plasticRecycledQty;
+			//  	scope.render(scope.data);
+			//  });
 
 			scope.render=function(data){
-				var datas = google.visualization.arrayToDataTable(data);
+				var datas = google.visualization.arrayToDataTable(scope.data);
 				chart.draw(datas, gaugeOptions);
 			}
 

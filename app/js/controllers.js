@@ -8,13 +8,16 @@ var phonecatControllers = angular.module('phonecatControllers', []);
 phonecatControllers.controller('headerController',['$scope',function ($scope){
 
  $scope.plasticRecycledQty=3;
- $scope.chartData =[
+ $scope.chartdata =[
           ['Label', 'Value'],
           ['CO2', 4],
           ['Plastic', 55],
           ['Years', 68]
         ];
  
+  //  $scope.$watch("plasticRecycledQty", function(newValue, oldValue) {
+  //   console.log('CTRL:', newValue);
+  // });
 
 }]);
 
