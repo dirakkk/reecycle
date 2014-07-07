@@ -14,7 +14,7 @@ var phonecatApp = angular.module('phonecatApp', [
 phonecatApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/phones', {
+      when('/dechets', {
         templateUrl: 'partials/dechets-list.html',
         controller: 'PhoneListCtrl'
       }).
@@ -23,7 +23,7 @@ phonecatApp.config(['$routeProvider',
         controller: 'DechetDetailCtrl'
       }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/dechets'
       });
   }]);
 

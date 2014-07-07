@@ -11,6 +11,25 @@
 			});
 		}]);
 
+	//the service to broadcast changes between ctrlers
+	phonecatServices.factory('broadcaster', ['$rootScope',
+		function($rootScope){
+
+			var sharedService = {};
+			sharedService.itemsToRecycle =0;
+
+			sharedService.broadcastRecycling = function  (nbItems,$rootScope) {
+				this.itemsToRecycle=nbItems;	
+				$rootScope.$broadcast('handleBroadcast');
+			};
+
+			return sharedService;
+
+		}
+		]);
+
+
+
 	//injecting the D3 methods !!!
 	var d3Services = angular.module('d3', []);
 	d3Services.factory('d3Service', ['$document', '$q', '$rootScope',

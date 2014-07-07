@@ -105,11 +105,11 @@ angular.module('googleGauge',[]).directive('gaugeChart',[ function() {
 			});
 
 
-			 scope.$watch("qty", function(newValue, oldValue) {
-    console.log('CTRLFF:', newValue);
-      	scope.data[1][1] =scope.qty;
-			  	scope.render(scope.data);
-  });
+			scope.$watch("qty", function(newValue, oldValue) {
+				console.log('CTRLFF:', newValue);
+				scope.data[1][1] =scope.qty;
+				scope.render(scope.data);
+			});
 
 			// scope.$watch(scope.plasticRecycledQty, function(value2){
 			//  	scope.data[1][1] =scope.plasticRecycledQty;

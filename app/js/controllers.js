@@ -5,7 +5,7 @@
 var phonecatControllers = angular.module('phonecatControllers', []);
 
 
-phonecatControllers.controller('headerController',['$scope',function ($scope){
+phonecatControllers.controller('headerController',['$scope','broadcaster',function ($scope,broadcaster){
 
  $scope.plasticRecycledQty=3;
  $scope.chartdata =[
@@ -15,6 +15,11 @@ phonecatControllers.controller('headerController',['$scope',function ($scope){
           ['Years', 68]
         ];
  
+ $scope.$on('handleBroadcast', function() {
+        $scope.plasticRecycledQty = broadcaster.itemsToRecycle;
+    });        
+
+
   //  $scope.$watch("plasticRecycledQty", function(newValue, oldValue) {
   //   console.log('CTRL:', newValue);
   // });
@@ -27,17 +32,17 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Dechet',
     $scope.orderProp = 'age';
   }]);
 
-phonecatControllers.controller('DechetDetailCtrl', ['$scope', '$routeParams', 'Dechet','$log',
-  function($scope, $routeParams, Dechet,$log) {
-    $log.debug($routeParams.dechetId);
+phonecatControllers.controller('DechetDetailCtrl', ['$scope','$routeParams', 'Dechet','$log','$rootScope' ,'broadcaster',
+  function($scope, $routeParams, Dechet,$log,$rootScope,broadcaster) {
+    //$log.debug($routeParams.dechetId);
+    $log.debug("hello");
 
-    // //hard-code data
-    // $scope.d3Data = [
-    // {name: "EU recycling rate", score: 50},
-    // {name: "CO2 rate of recycling", score: 80},
-    // {name: 'Tons recycled/year in EU', score: 120},
-    // {name: "Days to recycle", score: 40}
-    // ];
+
+    $scope.qtyToRecycle=0;
+
+    $scope.recycleItem = function (){
+      broadcaster.broadcastRecycling( $scope.qtyToRecycle,$rootScope);
+    }
     
 
 
