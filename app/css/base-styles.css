@@ -9,16 +9,17 @@
 .header-container{
 	background:#fff;
 	border-bottom:3px solid #ebebeb;
-	position:relative;
+	/*position:relative;
 	z-index:100;
 	min-width:995px;
-	width:100%}
+	width:100%*/
+}
 #logo{
 	background:url(../skin/frontend/enterprise/blank/images/header-logo.png) 
 	no-repeat;
 	cursor:pointer;
 	/*display:inline-block;*/
-	margin-left: 40px;
+	margin: auto;
 	overflow:hidden;
 	width:310px;
 }
