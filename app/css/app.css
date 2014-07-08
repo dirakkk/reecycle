@@ -115,3 +115,11 @@ ul.specs {
   top: -30px;
   display: inline;
 }
+
+.centered {
+  margin:0 auto;
+}
+
+.img-responsive table {
+  margin : 0 auto;
+}

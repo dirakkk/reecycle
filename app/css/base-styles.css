@@ -15,12 +15,11 @@
 	width:100%*/
 }
 #logo{
-	background:url(../skin/frontend/enterprise/blank/images/header-logo.png) 
-	no-repeat;
+	background-position:center;
 	cursor:pointer;
-	/*display:inline-block;*/
+	/*display:inline-block;
 	margin: auto;
-	overflow:hidden;
+	overflow:hidden;*/
 	width:310px;
 }
 #search-row {
