@@ -20,10 +20,6 @@ phonecatControllers.controller('headerController',['$scope','broadcaster',functi
     });        
 
 
-  //  $scope.$watch("plasticRecycledQty", function(newValue, oldValue) {
-  //   console.log('CTRL:', newValue);
-  // });
-
 }]);
 
 phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Dechet',
@@ -34,18 +30,13 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Dechet',
 
 phonecatControllers.controller('DechetDetailCtrl', ['$scope','$routeParams', 'Dechet','$log','$rootScope' ,'broadcaster',
   function($scope, $routeParams, Dechet,$log,$rootScope,broadcaster) {
-    //$log.debug($routeParams.dechetId);
-    $log.debug("hello");
-
-
+    $log.debug($routeParams.dechetId);
     $scope.qtyToRecycle=0;
 
     $scope.recycleItem = function (){
       broadcaster.broadcastRecycling( $scope.qtyToRecycle,$rootScope);
     }
     
-
-
     $scope.phone = Dechet.get({dechetId: $routeParams.dechetId}, function(phone) {
       $scope.mainImageUrl = phone.images[0];
       $scope.d3Data=phone.recycling_figures;

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Google Phone Gallery</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-     <!--link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/-->
+  <!--link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/-->
 
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -23,17 +23,40 @@
   <script src="js/directives.js"></script>
   <script type='text/javascript' src='https://www.google.com/jsapi'></script>
   <script type="text/javascript">
-      google.setOnLoadCallback(function() {
+    google.setOnLoadCallback(function() {
         //angular.bootstrap(document.body, ['phonecatApp']);
-    });
+      });
     google.load('visualization', '1', {packages: ['gauge']});
   </script>  
 </head>
 <body>
-<div class="header-container" ng-controller="headerController" >
-    <div id="header" class="base-width"><img src="img/icons/logo_2.jpg" title="RecycleBank" id="logo"></div>
-    <div gauge-chart data="chartdata" qty="plasticRecycledQty"></div>
+  <div class="header-container" ng-controller="headerController" >
+    <div class="row">
+      <!--col powered -->
+      <div class="col-lg-3 col-md-3 col-sm-2 hidden-xs "> 
+       <div class="hidden-sm poweredtext">powered by</div> 
+       <div  class="powered col-md-6 col-sm-1 ">
+        <img src="img/icons/icon-angular.png" title="angular" >
+        <img src="img/icons/iconD3Js.jpg" title="d3" >
+      </div>
+      <!--wazzza -->
+    </div>
+    <!--col logo reecycle-->
+    <div class="col-lg-5  col-md-4 col-sm-5 col-xs-6">
+      <div >
+        <img src="img/icons/logo_2.jpg" id="logo"/>
+      </div>
+    </div>
+    <!--div -->
+      <div class="col-lg-4 col-md-5 col-sm-5 col-xs-6" gauge-chart data="chartdata" qty="plasticRecycledQty"></div>
+      <!--div  >
+        wazzza
+      </div
+
+    </div-->>
+  </div>
 </div>
+
 <div class="clearer"></div>
 <div class="view-container"><div ng-view class="view-frame"></div></div>
 

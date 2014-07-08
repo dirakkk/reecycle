@@ -7,6 +7,10 @@
              ng-repeat="img in phone.images"
              ng-class="{active: mainImageUrl==img}">
       </div>
+      <span>
+        Number:<input type="number" name="quantity" id="quantity" ng-model="qtyToRecycle"  />
+        <button ng-click="recycleItem()">recycle</button>
+      </span>
     </div>
     <div class="col-xs-5">
       <h1>{{phone.name}}</h1>
@@ -17,10 +21,6 @@
         <li ng-repeat="img in phone.images">
           <img ng-src="{{img}}" ng-click="setImage(img)">
         </li>
-        <span>
-        Number:<input type="number" name="quantity" id="quantity" ng-model="qtyToRecycle"  />
-        <button ng-click="recycleItem()">recycle</button>
-        </span>
       </ul>
 
       <ul class="specs">
