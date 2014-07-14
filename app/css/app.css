@@ -17,7 +17,7 @@ li {
   list-style: none; }
 
 /** Detail View **/
-img.phone {
+img.wasteimg {
   float: left;
   margin-right: 3em;
   margin-bottom: 2em;
@@ -26,7 +26,7 @@ img.phone {
   height: 400px;
   width: 400px;
   display: none; }
-  img.phone:first-child {
+  img.wasteimg:first-child {
     display: block; }
 
 .caption {
