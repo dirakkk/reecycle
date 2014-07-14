@@ -26,15 +26,14 @@ img.phone {
   height: 400px;
   width: 400px;
   display: none; }
+  img.phone:first-child {
+    display: block; }
 
 .caption {
   width: 80px;
   height: 80px;
   overflow: hidden;
   display: inline-block; }
-
-img.phone:first-child {
-  display: block; }
 
 ul.phone-thumbs {
   margin: 0;

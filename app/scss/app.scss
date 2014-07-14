@@ -35,6 +35,11 @@ img.phone {
   height: 400px;
   width: 400px;
   display: none;
+
+   &:first-child {
+    display: block;
+  }
+
 }
 
 .caption {
@@ -42,10 +47,6 @@ img.phone {
   height : 80px;
   overflow: hidden;
   display:inline-block;
-}
-
-img.phone:first-child {
-  display: block;
 }
 
 
