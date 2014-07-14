@@ -43,6 +43,7 @@ phonecatControllers.controller('DechetDetailCtrl', ['$scope','$routeParams', 'De
     });
 
     $scope.setImage = function(imageUrl) {
+       $log.debug(imageUrl);
       $scope.mainImageUrl = imageUrl;
     }
   }]);

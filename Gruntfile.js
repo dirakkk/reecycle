@@ -29,6 +29,13 @@ module.exports = function(grunt) {
     nodeunit: {
       files: ['test/**/*_test.js']
     },
+    sass:{
+        dast:{
+        files:{                                      // Dictionary of files
+          './app/css/app.css': './app/scss/app.scss'   // 'destination': 'source'
+        }
+      }
+    },
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -37,7 +44,11 @@ module.exports = function(grunt) {
       lib_test: {
         files: '<%= jshint.lib_test.src %>',
         tasks: ['jshint:lib_test', 'nodeunit']
-      }
+      },
+      css: {
+        files: ['./app/scss/app.scss'],
+        tasks: ['sass']
+      },
     },
     image_resize: {
       resize:{
@@ -64,6 +75,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-image-resize');
 
   // Default task.
