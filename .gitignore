@@ -7,3 +7,4 @@ tmp
 angular-phonecat-snapshots
 bower_components/
 .sass-cache/
+.sass-cache/*/app.scssc

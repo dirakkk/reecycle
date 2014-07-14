@@ -19,8 +19,8 @@ describe('PhoneCat controllers', function() {
 
     beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
       $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('phones/phones.json').
-          respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+      $httpBackend.expectGET('dechets/dechets2.json').
+          respond([{name: 'sac plastocus'}, {name: 'bouteille en verre'}]);
 
       scope = $rootScope.$new();
       ctrl = $controller('PhoneListCtrl', {$scope: scope});
@@ -32,7 +32,7 @@ describe('PhoneCat controllers', function() {
       $httpBackend.flush();
 
       expect(scope.phones).toEqualData(
-          [{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+          [{name: 'sac plastocus'}, {name: 'bouteille en verre'}]);
     });
 
 
@@ -42,23 +42,25 @@ describe('PhoneCat controllers', function() {
   });
 
 
-  describe('PhoneDetailCtrl', function(){
+  describe('DechetDetailCtrl', function(){
     var scope, $httpBackend, ctrl,
-        xyzPhoneData = function() {
+        plasticbagData = function() {
           return {
-            name: 'phone xyz',
-                images: ['image/url1.png', 'image/url2.png']
+            name: 'Common plastic bag made from polyethylene',
+                images: ['img/objects/plastic-bag.0.jpg', 
+                "img/objects/plastic-bag.1.jpg", 
+                "img/objects/plastic-bag.2.jpg"]
           }
         };
 
 
     beforeEach(inject(function(_$httpBackend_, $rootScope, $routeParams, $controller) {
       $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('phones/xyz.json').respond(xyzPhoneData());
+      $httpBackend.expectGET('dechets/plastic-bag.json').respond(plasticbagData());
 
-      $routeParams.phoneId = 'xyz';
+      $routeParams.dechetId = 'plastic-bag';
       scope = $rootScope.$new();
-      ctrl = $controller('PhoneDetailCtrl', {$scope: scope});
+      ctrl = $controller('DechetDetailCtrl', {$scope: scope});
     }));
 
 
@@ -66,7 +68,7 @@ describe('PhoneCat controllers', function() {
       expect(scope.phone).toEqualData({});
       $httpBackend.flush();
 
-      expect(scope.phone).toEqualData(xyzPhoneData());
+      expect(scope.phone).toEqualData(plasticbagData());
     });
   });
 });
