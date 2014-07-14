@@ -14,20 +14,19 @@
         <span class="input-group-addon"></span>
         <input class="form-control grey" placeholder="Search" ng-model="query" aria-haspopup="true"/>
       </div>
-
     </div>
 
     <div class="row">
 
       <div class="col-xs-8">
         <ul>
-          <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" href="#/phones/{{phone.id}}" class="span4">
-            <a href="#/dechets/{{phone.id}}">
+          <li ng-repeat="waste in phones | filter:query | orderBy:orderProp" href="#/phones/{{waste.id}}" class="span4">
+            <a href="#/dechets/{{waste.id}}">
               <div   class="thumbnail right-caption span4">
-                <img class="span2 thumb " ng-src="{{phone.imageUrl}}" alt="">
+                <img class="span2 thumb " ng-src="{{waste.imageUrl}}" alt="">
                 <div class="caption">
-                  <h5>{{phone.name}}</h5>
-                  <p>{{phone.snippet}}</p>
+                  <h5>{{waste.name}}</h5>
+                  <p>{{waste.snippet}}</p>
                 </div>
               </div>
             </a>

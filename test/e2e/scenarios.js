@@ -7,34 +7,34 @@ describe('PhoneCat App', function() {
   it('should redirect index.html to index.html#/phones', function() {
     browser.get('app/index.html');
     browser.getLocationAbsUrl().then(function(url) {
-        expect(url.split('#')[1]).toBe('/phones');
+        expect(url.split('#')[1]).toBe('/dechets');
       });
   });
 
 
-  describe('Phone list view', function() {
+  describe('Waste list view', function() {
 
     beforeEach(function() {
-      browser.get('app/index.html#/phones');
+      browser.get('app/index.html#/dechets');
     });
 
 
-    it('should filter the phone list as user types into the search box', function() {
+    it('should filter the waste list as user types into the search box', function() {
 
-      var phoneList = element.all(by.repeater('phone in phones'));
+      var wasteList = element.all(by.repeater('waste in phones'));
       var query = element(by.model('query'));
 
-      expect(phoneList.count()).toBe(20);
+      expect(wasteList.count()).toBe(3);
 
-      query.sendKeys('nexus');
-      expect(phoneList.count()).toBe(1);
+      query.sendKeys('plastic');
+      expect(wasteList.count()).toBe(1);
 
       query.clear();
-      query.sendKeys('motorola');
-      expect(phoneList.count()).toBe(8);
+      query.sendKeys('bouteille');
+      expect(wasteList.count()).toBe(1);
     });
 
-
+/*
     it('should be possible to control phone order via the drop down select box', function() {
 
       var phoneNameColumn = element.all(by.repeater('phone in phones').column('{{phone.name}}'));
@@ -70,9 +70,10 @@ describe('PhoneCat App', function() {
         expect(url.split('#')[1]).toBe('/phones/nexus-s');
       });
     });
+*/
   });
 
-
+/*
   describe('Phone detail view', function() {
 
     beforeEach(function() {
@@ -97,5 +98,5 @@ describe('PhoneCat App', function() {
       element(by.css('.phone-thumbs li:nth-child(1) img')).click();
       expect(element(by.css('img.phone.active')).getAttribute('src')).toMatch(/img\/phones\/nexus-s.0.jpg/);
     });
-  });
+  });*/
 });
