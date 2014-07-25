@@ -36,7 +36,7 @@ To see the changes which between any two lessons use the git diff command.
 
 
 
-## Development with angular-phonecat
+## Development with ree-cycle
 
 The following docs describe how you can test and develop further this application.
 
